@@ -24,13 +24,13 @@
 
  int find(int e, node *t, int *y)
  {
-	 *y += 1;
 	 if (t != NULL && t->data != e)
 	 {
-     if( e < t->data )
-          find( e, t->left, y);
-     else
-          find( e, t->right, y);
+		 *y += 1;
+		 if( e < t->data )
+			 find( e, t->left, y);
+		 else
+			 find( e, t->right, y);
 	 }
      return *y;
  }
@@ -209,14 +209,14 @@
  {
  	if (bt != NULL) {
 
- 		  printf ("( %d ", bt->data);
+ 		  printf ("(%d ", bt->data);
  	      printAVL (bt->left);
  	      printAVL (bt->right);
- 	      printf(")");
+ 	      printf(") ");
  	   }
  	else
  	{
- 		printf(" () ");
+ 		printf("() ");
  	}
  }
 

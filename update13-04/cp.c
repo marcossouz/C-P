@@ -40,23 +40,22 @@ void printBinaryTree(Binarytree *bt)
 {
 	if (bt != NULL) {
 
-		  printf ("( %d ", bt->value);
+		  printf ("(%d ", bt->value);
 	      printBinaryTree (bt->left);
 	      printBinaryTree (bt->right);
-	      printf(")");
+	      printf(") ");
 	   }
 	else
 	{
-		printf(" () ");
+		printf("() ");
 	}
 }
 
 int searchNode (Binarytree *bt, int value, int *x)
 {
-	*x += 1 ;
     if (bt != NULL && bt->value != value)
     {
-
+    	*x += 1;
     	if (bt->value > value)
     		 searchNode (bt->left, value, x);
     	else
