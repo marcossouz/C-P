@@ -1,0 +1,15 @@
+!SESSION 2016-04-13 07:18:32.132 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_95
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.mylyn.tasks.ui 2 0 2016-04-13 07:18:58.031
+!MESSAGE No search provider was registed. Tasks search is not available.
+
+!ENTRY org.eclipse.cdt.core 1 0 2016-04-13 07:19:28.055
+!MESSAGE Indexed 'cplot' (0 sources, 0 headers) in 0,00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2016-04-13 07:22:11.804
+!MESSAGE Indexed 'update13-04' (0 sources, 0 headers) in 0,00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
