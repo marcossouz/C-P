@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "cp.h"
+#define DEBUG if(0)
+//#define INTERV 400
+//#define QTEST 200
+
+int main()
+{
+    int i, x, interv, qtest;
+    //printf("intervalo da rand: [0,%d]\n", RAND_MAX);
+    srand( (unsigned)time(NULL) );
+    
+    Binarytree *newNode = NULL;
+    Binarytree *bt = NULL;
+    node *treeAVL = NULL;
+    Node *list = NULL;
+   
+    
+    FILE *f = fopen("inR.txt", "w");
+    if(f == NULL)
+    {
+        printf("ERRO AO TENTAR CRIAR ARQUIVO\n");
+        exit(1);
+    }
+
+    printf("Intervalo de sorteio( 1 ~ N )\nN: ");
+    scanf("%d", &interv);
+    printf("Quantidade de teste: ");
+    scanf("%d", &qtest);
+
+    printf("Escolha o caso de teste abaixo:\n\n");
+    printf("1 - Inserir numeros aleatorio do intervalo (1 ~ N) com insercao do tipo (somatorio de (1 ~ (Quant. testes))\n");
+    printf("1 - Buscar numero aleatorio no intervalo (1 ~ N)\n");
+    printf("2 - ");
+
+
+    int j;
+    for(j=1; j <= qtest; j++ )
+    {
+
+        for(i=1 ; i <= j ; i++)
+        {
+            //x = 1 + rand() % interv ;
+        	//x = i;
+        	x = j; //caso extremo
+
+            newNode = createNewNode(x);
+            bt = insertNode(bt, newNode);
+            treeAVL = insert(x, treeAVL);
+            list = insertNodeList(list, x);
+        }
+
+
+    DEBUG printBinaryTree(bt);
+    DEBUG printf("\n");
+    DEBUG printAVL(treeAVL);
+
+		//x = 1 + rand() % interv ;
+        //x = interv + 10;
+
+		int s = 0, q = 0, r = 0;
+
+		s = searchNode(bt, x, &s);
+		q = find(x, treeAVL, &q);
+		r = search(list, x);
+
+		fprintf(f, "%d %d %d %d\n", j, s, q, r);
+		DEBUG printf("\nx: %d\ncomparacoes BinaryTree: %d\n", x, s);
+		DEBUG printf("comparacoes AVL: %d\n", q);
+		DEBUG printf("comparacoes linkedList: %d\n", r);
+
+
+    }
+
+    printf("Arquivo gerado com sucesso!...\n");
+    return 0;
+}
