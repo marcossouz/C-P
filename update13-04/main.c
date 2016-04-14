@@ -13,13 +13,13 @@ int main()
     int busc1=0, busc2=0, busc3=0, busc4=0, escXBusc, contador=1;
     //printf("intervalo da rand: [0,%d]\n", RAND_MAX);
     srand( (unsigned)time(NULL) );
-    
+
     Binarytree *newNode = NULL;
     Binarytree *bt = NULL;
-    node *treeAVL = NULL;
+    AVL *treeAVL = NULL;
     Node *list = NULL;
-   
-    
+
+
     FILE *f = fopen("inR.txt", "w");
     if(f == NULL)
     {
@@ -126,7 +126,7 @@ int main()
 		int s = 1, q = 1, r = 0;
 
 		s = searchNode(bt, x, &s);
-		q = find(x, treeAVL, &q);
+		q = searchAVL(x, treeAVL, &q);
 		r = search(list, x);
 
 		fprintf(f, "%d %d %d %d\n", j, s, q, r);

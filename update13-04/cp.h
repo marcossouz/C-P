@@ -1,36 +1,35 @@
 /*cp.h*/
 
+/**
+* Arvore Binaria */
 typedef struct BinaryTree Binarytree;
 
+/**
+* Cria um nó novo para inserir na arvore binaria*/
 Binarytree* createNewNode(int value);
 
+/**
+* Insere o nó novo na arvore binaria passada com argumento */
 Binarytree* insertNode(Binarytree *bt, Binarytree *newNode);
 
+/**
+* imprime a arvore binaria em pre-ordem */
 void printBinaryTree(Binarytree *bt);
 
+/**
+* procura o valor desejado no na arvore e retorna o numeros de
+* comparacoes realizadas */
 int searchNode (Binarytree *bt, int value, int *x);
 
 
-/*  AVL */
-typedef struct node node;
+/**  AVL */
+typedef struct AVL AVL;
 
-void dispose(node* t);
+int searchAVL(int value, AVL *tree, int *comparacoes);
 
-int find(int e, node *t, int *y);
+AVL* insert( int value, AVL *tree );
 
-node* find_min( node *t );
-
-node* find_max( node *t );
-
-node* insert( int data, node *t );
-
-node* delete( int data, node *t );
-
-void display_avl(node* t);
-
-int get( node* n );
-
-void printAVL(node *bt);
+void printAVL(AVL *tree);
 
 /* Lista encadeada*/
 typedef struct node Node;
