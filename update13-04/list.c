@@ -9,25 +9,6 @@ struct node
     struct node *nextNode;
 };
 
-int subconj(Node *l1, Node *l2)
-{
-    int a;
-    Node *p, *pp;
-    for(p = l1; p != NULL; p = p->nextNode)
-    {
-        a = 0;
-        for(pp = l2; pp != NULL; pp = pp->nextNode)
-        {
-
-            if( p->item == pp->item)
-            {
-                a = 1;
-            }
-        }
-    }
-    return a;
-}
-
 Node* createLinkedList()
 {
     return NULL;

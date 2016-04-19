@@ -34,8 +34,6 @@ void printAVL(AVL *tree);
 /* Lista encadeada*/
 typedef struct node Node;
 
-int subconj(Node *l1, Node *l2);
-
 Node* createLinkedList();
 
 Node* insertNodeList(Node *node, int item);
